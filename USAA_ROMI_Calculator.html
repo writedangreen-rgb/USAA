@@ -1,0 +1,3029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semcasting × USAA | ROMI Calculator — Reimagining Marketing Measurement for Profitable Growth</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #003a70;          /* USAA Navy */
+    --blue-dark: #002650;     /* USAA Navy Dark */
+    --blue-deep: #001a38;     /* USAA Navy Deep */
+    --blue-light: rgba(0,58,112,0.08);
+    --blue-mid: rgba(0,58,112,0.18);
+    --gold: #f8b800;          /* USAA Gold accent */
+    --gold-soft: #fff4d1;
+    --text: #111827;
+    --text-muted: #6b7280;
+    --bg: #f8f9fb;
+    --white: #ffffff;
+    --success: #2e7d32;       /* deeper green to harmonize with navy */
+    --border: #e2e8f0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo {
+    width: 34px; height: 34px;
+    background: linear-gradient(135deg, var(--blue), #2a6bb0);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .nav-logo svg { width: 18px; height: 18px; fill: white; }
+
+  .nav-wordmark {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--blue);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--blue);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    background: linear-gradient(170deg, #eef3f8 0%, #f4f7fb 50%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .orb-1 {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, #2a6bb0, #003a70);
+    top: -150px; left: -100px;
+    animation-delay: 0s;
+  }
+
+  .orb-2 {
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, #a5b4fc, #818cf8);
+    bottom: -80px; right: -80px;
+    animation-delay: 3s;
+  }
+
+  .orb-3 {
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, #bfdbfe, #60a5fa);
+    top: 40%; right: 15%;
+    animation-delay: 5s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(20px, -20px) scale(1.05); }
+    66% { transform: translate(-15px, 15px) scale(0.97); }
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--blue-light);
+    border: 1px solid var(--blue-mid);
+    color: var(--blue);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.2s;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+    animation: pulse 2s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.1;
+    color: var(--blue-deep);
+    max-width: 820px;
+    margin: 0 auto 24px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.4s;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--blue);
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 19px);
+    color: var(--text-muted);
+    max-width: 560px;
+    line-height: 1.7;
+    margin: 0 auto 44px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.6s;
+  }
+  .hero-sub strong {
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.8s;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--blue);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.25s;
+    box-shadow: 0 4px 24px rgba(47,91,255,0.35);
+  }
+
+  .btn-primary:hover {
+    background: var(--blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(47,91,255,0.4);
+  }
+
+  .btn-primary svg { width: 18px; height: 18px; fill: white; }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: var(--text);
+    padding: 16px 28px;
+    border-radius: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    transition: all 0.25s;
+  }
+
+  .btn-secondary:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SCROLL INDICATOR ── */
+  .scroll-hint {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 1.4s;
+  }
+
+  .scroll-hint span {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .scroll-mouse {
+    width: 22px; height: 34px;
+    border: 2px solid #cbd5e1;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+  }
+
+  .scroll-wheel {
+    width: 3px; height: 6px;
+    background: var(--blue);
+    border-radius: 100px;
+    animation: scrollWheel 1.8s ease infinite;
+  }
+
+  @keyframes scrollWheel {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(8px); opacity: 0; }
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--blue);
+    padding: 28px 48px;
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: all 0.5s ease;
+  }
+
+  .stat-item.visible { opacity: 1; transform: translateY(0); }
+
+  .stat-number {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.75;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .section {
+    padding: 100px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--blue-deep);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 540px;
+    font-weight: 300;
+    margin-bottom: 60px;
+  }
+
+  /* ── STEPS ── */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    position: relative;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 44px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue-mid), var(--blue), var(--blue-mid));
+    z-index: 0;
+  }
+
+  .step-card {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+
+  .step-card.visible { opacity: 1; transform: translateY(0); }
+
+  .step-icon-wrap {
+    width: 88px; height: 88px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(47,91,255,0.15);
+    transition: all 0.3s ease;
+  }
+
+  .step-card:hover .step-icon-wrap {
+    background: var(--blue);
+    transform: scale(1.08);
+    box-shadow: 0 8px 32px rgba(47,91,255,0.3);
+  }
+
+  .step-icon-wrap svg { width: 32px; height: 32px; }
+  .step-card:hover .step-icon-wrap svg path,
+  .step-card:hover .step-icon-wrap svg rect,
+  .step-card:hover .step-icon-wrap svg circle,
+  .step-card:hover .step-icon-wrap svg polyline,
+  .step-card:hover .step-icon-wrap svg line { stroke: white !important; }
+
+  .step-num {
+    position: absolute;
+    top: -6px; right: -6px;
+    width: 24px; height: 24px;
+    background: var(--blue);
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+  }
+
+  .step-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .step-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ── WHAT YOU GET ── */
+  .features-section {
+    background: linear-gradient(135deg, #001a38 0%, #002650 60%, #003a70 100%);
+    padding: 100px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .features-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .features-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .features-section .section-tag { color: #f8b800; }
+  .features-section .section-title { color: white; }
+  .features-section .section-sub { color: rgba(255,255,255,0.65); }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .feature-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .feature-card.visible { opacity: 1; transform: translateY(0); }
+  .feature-card:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); transform: translateY(-4px); }
+
+  .feature-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .feature-icon svg { width: 22px; height: 22px; }
+
+  .feature-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .feature-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.65;
+  }
+
+  /* ── ANIMATED CALCULATOR PREVIEW ── */
+  .preview-section {
+    padding: 100px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .preview-section { grid-template-columns: 1fr; gap: 40px; }
+    .steps::before { display: none; }
+    nav { padding: 16px 20px; }
+    .stats-bar { gap: 32px; padding: 24px 20px; }
+    .section { padding: 60px 20px; }
+    .features-section { padding: 60px 20px; }
+  }
+
+  .preview-text .section-sub { margin-bottom: 32px; }
+
+  .check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateX(-16px);
+    transition: all 0.5s ease;
+  }
+
+  .check-list li.visible { opacity: 1; transform: translateX(0); }
+
+  .check-icon {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: rgba(16,185,129,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .check-icon svg { width: 12px; height: 12px; }
+
+  /* Animated UI mock */
+  .calc-mock {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(30px) rotate(1deg);
+    transition: all 0.8s ease;
+  }
+
+  .calc-mock.visible { opacity: 1; transform: translateX(0) rotate(0deg); }
+
+  .mock-header {
+    background: var(--blue);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .mock-dot:nth-child(1) { background: #ff5f57; }
+  .mock-dot:nth-child(2) { background: #ffbd2e; }
+  .mock-dot:nth-child(3) { background: #28ca41; }
+
+  .mock-title { color: rgba(255,255,255,0.8); font-size: 12px; font-weight: 500; margin-left: 6px; }
+
+  .mock-steps {
+    display: flex;
+    padding: 14px 20px;
+    gap: 6px;
+    border-bottom: 1px solid #f1f5f9;
+    background: #fafbff;
+  }
+
+  .mock-step-dot {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: #9ca3af;
+    flex-shrink: 0;
+  }
+
+  .mock-step-dot.active { background: var(--blue); color: white; }
+  .mock-step-dot.done { background: var(--success); color: white; }
+
+  .mock-step-line { flex: 1; height: 2px; background: #e5e7eb; align-self: center; border-radius: 2px; }
+  .mock-step-line.done { background: var(--success); }
+
+  .mock-body { padding: 20px; }
+
+  .mock-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+
+  .mock-input {
+    height: 38px;
+    background: #f8f9fb;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #374151;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mock-input::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0; bottom: 0;
+    width: 60%;
+    background: linear-gradient(90deg, transparent, rgba(47,91,255,0.06), transparent);
+    animation: shimmer 3s ease infinite;
+  }
+
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 200%; }
+  }
+
+  .mock-result-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .mock-result {
+    background: linear-gradient(135deg, #eef3f8, #eef3f8);
+    border: 1px solid #d0ddff;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: popIn 0.5s ease forwards;
+  }
+
+  .mock-result:nth-child(1) { animation-delay: 1.2s; }
+  .mock-result:nth-child(2) { animation-delay: 1.5s; }
+  .mock-result:nth-child(3) { animation-delay: 1.8s; }
+  .mock-result:nth-child(4) { animation-delay: 2.1s; }
+
+  @keyframes popIn {
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .mock-result-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: var(--blue);
+    margin-bottom: 2px;
+  }
+
+  .mock-result-label {
+    font-size: 9px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    text-align: center;
+    padding: 100px 48px;
+    background: linear-gradient(170deg, #f8f9fb, #eef3f8);
+  }
+
+  .cta-section .section-title { margin-bottom: 16px; }
+  .cta-section .section-sub { margin: 0 auto 44px; text-align: center; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--blue-deep);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-brand { color: rgba(255,255,255,0.5); font-size: 13px; }
+  .footer-brand strong { color: white; }
+
+  .footer-link {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-link:hover { color: white; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: all 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+
+<!-- Calculator CSS -->
+  <style>
+    :root{
+      --bg:#f8f9fb;
+      --card:#ffffff;
+      --border:#d6dbe6;
+      --border2:#c7cfde;
+      --text:#111111;
+      --muted:rgba(17,17,17,.78);
+      --muted2:rgba(17,17,17,.60);
+      --accent:#003a70;
+      --accent-light:rgba(47,91,255,.10);
+      --success:#2e7d32;
+      --info-bg:#eef3f8;
+      --info-border:#d0ddff;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    
+    * { box-sizing: border-box; }
+    body{ margin:0; background:var(--bg); color:var(--text); }
+    
+    .header{
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    }
+    .header-inner{
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; }
+    .logo{
+      width:34px; height:34px; border-radius:10px;
+      background: linear-gradient(135deg, var(--accent), #2a6bb0);
+      box-shadow: 0 4px 12px rgba(47,91,255,.18);
+    }
+    .brand h1{ font-size: 16px; margin:0; letter-spacing:.2px; }
+    .brand .sub{ font-size: 12px; color: var(--muted2); margin: 2px 0 0; }
+
+    .header-actions{ display:flex; gap:10px; }
+    button, select{
+      border:1px solid var(--border2); background:#fff; color:var(--text);
+      border-radius: 10px; padding: 9px 14px; cursor:pointer; font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    button:hover, select:hover{ 
+      border-color: var(--accent); 
+      background: rgba(47,91,255,.04);
+    }
+    .btn-primary{
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover{
+      background: #2750e0;
+      border-color: #2750e0;
+    }
+
+    .progress-container{
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+    }
+    .progress-inner{
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .stepper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .step{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .step-circle{
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .step-circle:hover{
+      background: var(--accent);
+      color: #fff;
+      transform: scale(1.1);
+    }
+    .step.active .step-circle{
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 0 4px rgba(47,91,255,.15);
+    }
+    .step.completed .step-circle{
+      background: var(--success);
+      color: #fff;
+    }
+    .step-label{
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted2);
+      display: none;
+    }
+    .step.active .step-label{
+      color: var(--accent);
+      display: block;
+    }
+    .step-connector{
+      width: 40px;
+      height: 2px;
+      background: #e5e7eb;
+      transition: all 0.3s ease;
+    }
+    .step.completed + .step-connector{
+      background: var(--success);
+    }
+    
+    .progress-bar-wrap{
+      width: 100%;
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-bar{
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), #2a6bb0);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    .container{
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+    
+    .wizard-layout{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .info-panel{
+      position: sticky;
+      top: 100px;
+      background: var(--info-bg);
+      border: 2px solid var(--info-border);
+      border-radius: 16px;
+      padding: 32px;
+      min-height: 300px;
+      order: 1;
+    }
+    .info-title{
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0 0 16px;
+      color: var(--accent);
+    }
+    .info-content{
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    .info-content p{ margin: 0 0 14px; }
+    .info-content p:last-child{ margin-bottom: 0; }
+    .info-content ul{ margin: 12px 0; padding-left: 20px; }
+    .info-content li{ margin-bottom: 8px; }
+    .info-highlight{
+      background: rgba(47,91,255,.08);
+      border-left: 3px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 16px 0;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .input-panel{
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.04);
+      order: 2;
+    }
+    .panel-title{
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      color: var(--text);
+    }
+    .panel-subtitle{
+      font-size: 14px;
+      color: var(--muted2);
+      margin: 0 0 28px;
+      line-height: 1.5;
+    }
+
+    .field-group{ margin-bottom: 24px; }
+    .field-group:last-child{ margin-bottom: 0; }
+    
+    label{
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    
+    .input-wrap{ position: relative; }
+    .input-wrap .prefix, .input-wrap .suffix{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--muted);
+      pointer-events: none;
+    }
+    .input-wrap .prefix{ left: 14px; }
+    .input-wrap .suffix{ right: 14px; }
+    
+    input, select{
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      background: #fff;
+      color: var(--text);
+      transition: all 0.2s ease;
+      outline: none;
+    }
+    input:focus{
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(47,91,255,.1);
+    }
+    .pad-left{ padding-left: 32px !important; }
+    .pad-right{ padding-right: 32px !important; }
+    
+    .hint{
+      font-size: 12px;
+      color: var(--muted2);
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    .benchmark-range{
+      margin-top: 12px;
+      padding: 12px;
+      background: var(--info-bg);
+      border-radius: 8px;
+      border: 1px solid var(--info-border);
+    }
+    .benchmark-label{
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .benchmark-track{
+      position: relative;
+      height: 32px;
+      background: linear-gradient(90deg, #fef3c7 0%, #bfdbfe 50%, #d1fae5 100%);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      border: 1px solid #e5e7eb;
+    }
+    .benchmark-markers{
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 8px;
+    }
+    .benchmark-marker{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      flex: 1;
+    }
+    .benchmark-marker:nth-child(2){ align-items: center; }
+    .benchmark-marker:nth-child(3){ align-items: flex-end; }
+    .benchmark-dot{
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #6b7280;
+      margin-bottom: 4px;
+    }
+    .benchmark-marker:nth-child(2) .benchmark-dot{
+      width: 12px; height: 12px;
+      border-color: var(--accent);
+      border-width: 3px;
+      box-shadow: 0 0 0 3px rgba(47,91,255,.2);
+    }
+    .benchmark-value{
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--text);
+      background: #fff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      border: 1px solid #e5e7eb;
+    }
+    .benchmark-type{
+      font-size: 9px;
+      color: var(--muted2);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 2px;
+    }
+
+    /* Nav buttons */
+    .nav-buttons{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .btn-nav{
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 2px solid var(--border2);
+      background: #fff;
+      color: var(--text);
+    }
+    .btn-nav:hover:not(:disabled){ border-color: var(--accent); color: var(--accent); background: var(--info-bg); }
+    .btn-nav:disabled{ opacity: 0.4; cursor: not-allowed; }
+    .btn-nav.primary{ background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn-nav.primary:hover{ background: #2750e0; border-color: #2750e0; }
+
+    /* Page visibility */
+    .page{ display: none; }
+    .page.active{ display: block; }
+
+    /* Output panels */
+    .output-grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .output-card{
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    }
+    .output-card.highlight{
+      background: var(--info-bg);
+      border-color: var(--info-border);
+    }
+    .output-card.success{
+      background: rgba(16,185,129,.06);
+      border-color: rgba(16,185,129,.3);
+    }
+    .output-label{
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .output-value{
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+    .output-card.success .output-value{ color: var(--success); }
+    .output-mini{
+      font-size: 11px;
+      color: var(--muted2);
+      margin-top: 4px;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    .section-divider{
+      border: none;
+      border-top: 2px solid var(--border);
+      margin: 32px 0;
+    }
+    .section-heading{
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+      margin: 0 0 16px;
+    }
+
+    /* ── ROMI VIEW TOGGLE ── */
+    .romi-toggle{
+      display: flex;
+      align-items: stretch;
+      background: linear-gradient(135deg, #f4f7fb, #ffffff);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 6px;
+      margin: 0 0 24px;
+      gap: 6px;
+    }
+    .romi-toggle-btn{
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted2);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      text-align: left;
+    }
+    .romi-toggle-btn .romi-toggle-sub{
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted2);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .romi-toggle-btn:hover{ background: rgba(0,58,112,0.04); }
+    .romi-toggle-btn.active{
+      background: var(--accent);
+      color: white;
+    }
+    .romi-toggle-btn.active .romi-toggle-sub{ color: rgba(255,255,255,0.85); }
+    .romi-toggle-label{
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 14px 12px;
+      align-self: center;
+      border-right: 1px solid var(--border);
+      margin-right: 4px;
+    }
+
+    /* ── BASELINE DETAILS COLLAPSIBLE ── */
+    .baseline-details{
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0;
+      margin-top: 8px;
+    }
+    .baseline-summary{
+      cursor: pointer;
+      padding: 16px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
+    }
+    .baseline-summary::-webkit-details-marker{ display: none; }
+    .baseline-summary::before{
+      content: '▸';
+      display: inline-block;
+      transition: transform 0.2s;
+      color: var(--muted2);
+      font-size: 12px;
+    }
+    .baseline-details[open] .baseline-summary::before{
+      transform: rotate(90deg);
+    }
+    .baseline-summary:hover{ color: var(--accent); }
+    .baseline-content{
+      padding: 0 20px 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .error-msg{
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #b91c1c;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      display: none;
+      margin-bottom: 16px;
+    }
+
+    textarea{
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff;
+      color: var(--text);
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    textarea:focus{ border-color: var(--accent); box-shadow: 0 0 0 3px rgba(47,91,255,.1); }
+
+    /* Preset buttons */
+    .preset-bar{
+      display: flex;
+      gap: 10px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .preset-btn{
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 2px solid var(--border2);
+      background: #fff;
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .preset-btn:hover{ border-color: var(--accent); color: var(--accent); }
+    .preset-btn.active{ background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    /* Email modal */
+    .modal-overlay{
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.open{ display: flex; }
+    .modal-box{
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px;
+      max-width: 440px;
+      width: 90%;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+    }
+    .modal-title{ font-size: 22px; font-weight: 800; margin: 0 0 8px; color: var(--accent); }
+    .modal-sub{ font-size: 14px; color: var(--muted2); margin: 0 0 24px; line-height: 1.6; }
+    .modal-actions{ display: flex; gap: 12px; margin-top: 20px; }
+
+    #calculator-view{ display: none; }
+
+    .back-btn{
+      position: fixed;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      text-decoration: none;
+      top: 14px;
+      left: 16px;
+      z-index: 9999;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .back-btn:hover { background: #eef3f8; border-color: #003a70; }
+    .back-btn svg { width: 14px; height: 14px; }
+  </style>
+</head>
+<body>
+
+<!-- LANDING PAGE VIEW -->
+<div id="landing-view">
+
+<!-- NAV -->
+<nav>
+  <a href="https://www.semcasting.com/solutions_idx" target="_blank" class="nav-brand">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <span class="nav-wordmark">Semcasting × USAA</span>
+  </a>
+  <a href="javascript:void(0)" onclick="showCalculator()" class="nav-cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="13" y2="15"/></svg>
+    Launch Calculator
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <div class="hero-badge">Built for USAA · Reimagining Marketing Measurement for Profitable Growth</div>
+
+  <h1>Quantify the ROMI Lift from <em>Identity-Based</em> Measurement</h1>
+
+  <p class="hero-sub">
+    Model how identity-driven Precision Audience targeting, deterministic cross-channel measurement, and closed-loop attribution translate into <strong>incremental new-to-USAA households</strong> and <strong>quality funnel starts</strong> — calibrated to USAA's 14M-member, eligibility-constrained reality.
+  </p>
+
+  <div class="hero-actions">
+    <a href="javascript:void(0)" onclick="showCalculator()" class="btn-primary">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      Open the Calculator
+    </a>
+    <a href="#how-it-works" class="btn-secondary">
+      See how it works ↓
+    </a>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-number" data-count="6">0</div>
+    <div class="stat-label">Input Pages</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-count="20">0</div>
+    <div class="stat-label">Performance Metrics</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-prefix="$" data-count="0" data-suffix="M+">—</div>
+    <div class="stat-label">Revenue Modeled</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-count="3">0</div>
+    <div class="stat-label">Benchmark Scenarios</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="section">
+    <span class="section-tag reveal">How It Works</span>
+    <h2 class="section-title reveal">Six steps. Instant insight.</h2>
+    <p class="section-sub reveal">Walk through each input page and watch the calculator model your incremental digital media performance in real time.</p>
+
+    <div class="steps">
+
+      <div class="step-card">
+        <div class="step-icon-wrap">
+          <span class="step-num">1</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#003a70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <div class="step-title">Budget & CPM</div>
+        <div class="step-desc">Enter your media spend and cost-per-thousand to establish your impression volume baseline.</div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-icon-wrap">
+          <span class="step-num">2</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#003a70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <div class="step-title">Performance Metrics</div>
+        <div class="step-desc">Set member suppression rates, frequency controls, and click-through rates against industry benchmarks.</div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-icon-wrap">
+          <span class="step-num">3</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#003a70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="step-title">Quote-to-Bind Funnel</div>
+        <div class="step-desc">Define your quote start rate, quote completion rate, and policy bind rate from completed quotes.</div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-icon-wrap">
+          <span class="step-num">4</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#003a70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="step-title">Value & Lift</div>
+        <div class="step-desc">Input lifetime value per new-to-USAA household and the estimated lift from measurement optimization.</div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-icon-wrap">
+          <span class="step-num">5</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#003a70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </div>
+        <div class="step-title">Baseline Results</div>
+        <div class="step-desc">See your current-state policy revenue from digital media, without any measurement optimizations applied.</div>
+      </div>
+
+      <div class="step-card" style="display:flex; flex-direction:row; align-items:flex-start; text-align:left; gap:16px; grid-column: span 2;">
+        <div style="display:flex; flex-direction:column; align-items:center; text-align:center; min-width:120px;">
+          <div class="step-icon-wrap">
+            <span class="step-num">6</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003a70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="step-title">Measurement Impact</div>
+          <div class="step-desc">The full incremental revenue picture — what proper measurement and ID-based targeting adds to your bottom line.</div>
+        </div>
+        <div style="
+          background: #eef3f8;
+          border: 1px solid #b8c8dd;
+          border-left: 4px solid #003a70;
+          border-radius: 10px;
+          padding: 14px 16px;
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          align-self: center;
+          min-width: 200px;
+        ">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#003a70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;flex-shrink:0;margin-top:2px;">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          <p style="font-size:12px; line-height:1.6; color:#003a70; margin:0;">
+            For directional analysis only. Not a substitute for MTA models.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="features-section">
+  <div class="features-inner">
+    <span class="section-tag reveal">What You Get</span>
+    <h2 class="section-title reveal">Built for USAA's Marketing Stack,<br>aligned to your stated KPIs.</h2>
+    <p class="section-sub reveal">Every input, benchmark, and output mirrors the language from USAA's measurement framework — Quality Funnel Starts, Cost per Funnel Start, ROMI, CLTV, and Precision Audience.</p>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="feature-title">Industry Benchmarks Built In</div>
+        <div class="feature-desc">Hero Auto and Multi-Product Bundle presets — calibrated to USAA scale and aligned to the Hero Products strategy from your stated marketing framework.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="feature-title">Incremental Policy Revenue Modeling</div>
+        <div class="feature-desc">Instantly see the revenue delta between your current approach and a measurement-optimized media strategy measured in new-to-USAA households.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="feature-title">Member Suppression</div>
+        <div class="feature-desc">Quantify the impression lift from suppressing existing USAA members — recovering ~12% of impressions that would otherwise hit your 14M-member base instead of true prospects.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <div class="feature-title">Exportable PDF Report</div>
+        <div class="feature-desc">Share a professional summary of all your inputs and outputs — ready for agency presentations or internal reviews.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        </div>
+        <div class="feature-title">Quote-Starter Retargeting Sizing</div>
+        <div class="feature-desc">Model the additional new-to-USAA households available from retargeting identified site visitors who started but did not complete a quote.</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="feature-title">CLTV / PLTV Framework</div>
+        <div class="feature-desc">Model revenue impact using your actual LTV per new-to-USAA household — incorporating premium revenue, retention rates, and multi-policy household value.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ANIMATED PREVIEW -->
+<section>
+  <div class="preview-section">
+    <div class="preview-text">
+      <span class="section-tag reveal">Inside the Calculator</span>
+      <h2 class="section-title reveal">Real inputs.<br>Real outputs.</h2>
+      <p class="section-sub reveal">Every number you enter flows through a transparent, step-by-step model — no black boxes, no magic math.</p>
+      <ul class="check-list">
+        <li>
+          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Adjust any input and results update instantly
+        </li>
+        <li>
+          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Hero Auto and Multi-Product Bundle scenarios
+        </li>
+        <li>
+          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Side-by-side baseline vs. identity-optimized ROMI view
+        </li>
+        <li>
+          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Calibrated to USAA scale: 14M members, ~55M military-affiliated TAM
+        </li>
+        <li>
+          <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          Outputs aligned to USAA's stated KPIs: Quality Funnel Starts, CLTV, ROMI
+        </li>
+      </ul>
+    </div>
+
+    <!-- Animated UI Mock -->
+    <div class="calc-mock">
+      <div class="mock-header">
+        <div class="mock-dot"></div>
+        <div class="mock-dot"></div>
+        <div class="mock-dot"></div>
+        <span class="mock-title">USAA × Semcasting ROMI</span>
+      </div>
+      <div class="mock-steps">
+        <div class="mock-step-dot done">✓</div>
+        <div class="mock-step-line done"></div>
+        <div class="mock-step-dot done">✓</div>
+        <div class="mock-step-line done"></div>
+        <div class="mock-step-dot done">✓</div>
+        <div class="mock-step-line"></div>
+        <div class="mock-step-dot active">4</div>
+        <div class="mock-step-line"></div>
+        <div class="mock-step-dot">5</div>
+        <div class="mock-step-line"></div>
+        <div class="mock-step-dot">6</div>
+      </div>
+      <div class="mock-body">
+        <div class="mock-label">Lifetime Revenue Per New-to-USAA Household</div>
+        <div class="mock-input">$11,280.00</div>
+        <div class="mock-label">Incremental from Better Media Measurement Tied to KPIs</div>
+        <div class="mock-input">12.00%</div>
+        <div class="mock-label">Projected Hero Auto Results</div>
+        <div class="mock-result-row">
+          <div class="mock-result">
+            <div class="mock-result-num">$320M</div>
+            <div class="mock-result-label">Optimized Revenue</div>
+          </div>
+          <div class="mock-result">
+            <div class="mock-result-num">+$78M</div>
+            <div class="mock-result-label">Incremental ROMI</div>
+          </div>
+          <div class="mock-result">
+            <div class="mock-result-num">28K</div>
+            <div class="mock-result-label">New Households</div>
+          </div>
+          <div class="mock-result">
+            <div class="mock-result-num">32%</div>
+            <div class="mock-result-label">Revenue Increase</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <span class="section-tag reveal">Get Started</span>
+  <h2 class="section-title reveal">Ready to see your numbers?</h2>
+  <p class="section-sub reveal">It takes less than five minutes. No account needed — just your media inputs and a few benchmark assumptions.</p>
+  <div class="hero-actions reveal">
+    <a href="javascript:void(0)" onclick="showCalculator()" class="btn-primary">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;fill:white;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      Launch the Calculator
+    </a>
+    <a href="https://www.semcasting.com/solutions_idx" target="_blank" class="btn-secondary">Learn about Semcasting IDX →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand"><strong>Semcasting</strong> &nbsp;·&nbsp; USAA × Semcasting ROMI Calculator &nbsp;·&nbsp; Reimagining Marketing Measurement for Profitable Growth</div>
+  <a href="https://www.semcasting.com/solutions_idx" target="_blank" class="footer-link">semcasting.com →</a>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const delay = el.dataset.delay || 0;
+        setTimeout(() => el.classList.add('visible'), delay);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal, .stat-item, .step-card, .feature-card, .check-list li, .calc-mock').forEach((el, i) => {
+    if (!el.dataset.delay) el.dataset.delay = (i % 4) * 100;
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('.step-card').forEach((el, i) => { el.dataset.delay = i * 120; });
+  document.querySelectorAll('.feature-card').forEach((el, i) => { el.dataset.delay = i * 100; });
+  document.querySelectorAll('.check-list li').forEach((el, i) => { el.dataset.delay = i * 120; });
+
+  function animateCount(el) {
+    const target = parseInt(el.dataset.count);
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    if (isNaN(target)) return;
+    let current = 0;
+    const increment = target / 40;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) { current = target; clearInterval(timer); }
+      el.textContent = prefix + Math.round(current) + suffix;
+    }, 30);
+  }
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.stat-item').forEach(item => {
+          item.classList.add('visible');
+          const num = item.querySelector('[data-count]');
+          if (num) animateCount(num);
+        });
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const statsBar = document.querySelector('.stats-bar');
+  if (statsBar) statsObserver.observe(statsBar);
+</script>
+
+</div>
+
+<!-- CALCULATOR VIEW -->
+<div id="calculator-view">
+  <button class="back-btn" onclick="showLanding()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Overview
+  </button>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1><a href="https://www.semcasting.com/solutions_idx" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: none; font-size: 22px; font-weight: 900;">SEMCASTING</a></h1>
+          <div class="sub">USAA × Semcasting ROMI Calculator</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="resetBtn" type="button">Restart/Reset Calculator</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-container">
+    <div class="progress-inner">
+      <div class="stepper">
+        <div class="step" data-step="1">
+          <div class="step-circle">1</div>
+          <div class="step-label">Budget</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step" data-step="2">
+          <div class="step-circle">2</div>
+          <div class="step-label">Performance</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step" data-step="3">
+          <div class="step-circle">3</div>
+          <div class="step-label">Quote Funnel</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step" data-step="4">
+          <div class="step-circle">4</div>
+          <div class="step-label">Value</div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step" data-step="5">
+          <div class="step-circle">5</div>
+          <div class="step-label">Incremental Impact</div>
+        </div>
+      </div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar" id="progressBar" style="width: 20%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 12px;">
+      <span style="display: inline-block; background: linear-gradient(135deg, #f59e0b, #f97316); color: #fff; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 14px; border-radius: 999px; box-shadow: 0 2px 8px rgba(249,115,22,0.35);">⚠ In Beta</span>
+    </div>
+    <div style="text-align: center; margin-bottom: 32px;">
+      <h1 style="font-size: 32px; font-weight: 900; color: var(--accent); margin: 0 0 8px;">USAA × Semcasting ROMI Calculator</h1>
+      <p style="font-size: 18px; font-weight: 600; color: var(--accent); margin: 0;">Reimagining Marketing Measurement for Profitable Growth</p>
+    </div>
+
+    <!-- Page 1: Budget & CPM -->
+    <div class="page active" id="page1">
+      <div class="wizard-layout">
+        <div class="info-panel">
+          <h3 class="info-title">USAA's Eligibility-Constrained Media Math</h3>
+          <div class="info-content">
+            <p>USAA's marketing reality is unique: a defined, eligibility-bounded TAM (~55M military-affiliated Americans) where <strong>~25% of every untargeted impression hits an existing member</strong>. Member suppression and frequency control aren't optimizations — they're table stakes for media efficiency.</p>
+            
+            <p>The <strong>CPM</strong> represents how efficiently you're buying media. Lower CPMs mean more impressions for your budget; premium CTV and military-endemic placements run higher.</p>
+            
+            <div class="info-highlight">
+              💡 <strong>USAA Context:</strong> Per Sasi Telluri's "Reimagining Marketing Measurement" framework, the right starting question is "Right audiences to target with optimal frequency." This page sets that foundation.
+            </div>
+            
+            <p><strong>Why this matters for ROMI:</strong></p>
+            <ul>
+              <li>Budget and CPM determine your raw impression volume</li>
+              <li>Member suppression recovers waste — every impression saved goes to a true prospect</li>
+              <li>Identity-based frequency caps work where cookie-based caps fail (military households cluster on/near bases)</li>
+              <li>Quality of impression delivery directly drives Quality Funnel Starts downstream</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="input-panel">
+          <h2 class="panel-title">Media Assumptions</h2>
+          <p class="panel-subtitle">Start by entering your digital marketing budget and estimated cost per thousand impressions.</p>
+
+          <div class="preset-bar">
+            <span style="font-size:13px; font-weight:700; color:var(--muted2); align-self:center;">Hero Product Scenario:</span>
+            <button class="preset-btn active" onclick="loadPreset('heroAuto')">Hero Auto</button>
+            <button class="preset-btn" onclick="loadPreset('bundle')">Multi-Product Bundle</button>
+          </div>
+
+          <div class="field-group">
+            <label for="budget">Display & CTV Digital Marketing Budget</label>
+            <div class="input-wrap">
+              <span class="prefix">$</span>
+              <input id="budget" class="money pad-left" inputmode="numeric" value="80,000,000" required>
+            </div>
+            <div class="hint">Annual digital media budget for the selected hero product. Hero Auto ≈ $80M, Multi-Product Bundle ≈ $140M (illustrative allocations within USAA's ~$400M total measured media). Override with internal figures.</div>
+          </div>
+
+          <div class="field-group">
+            <label for="cpm">Blended CPM (Cost Per Thousand)</label>
+            <div class="input-wrap">
+              <span class="prefix">$</span>
+              <input id="cpm" class="money pad-left" inputmode="decimal" value="17.00" required>
+            </div>
+            <div class="hint">Average cost per 1,000 impressions across Display + CTV. Insurance and finserv categories typically run $14–$22 depending on placement premium and audience targeting.</div>
+            
+          </div>
+
+          <hr class="section-divider">
+          <h3 class="section-heading" style="font-size:24px;">Incremental Media Impact Resulting from Better Identity</h3>
+
+          <div class="field-group">
+            <label for="targetingLift">Targeting Lift % — Additional Site Visitors from Better Targeting</label>
+            <div class="input-wrap">
+              <input id="targetingLift" class="pad-right" inputmode="decimal" value="5.00" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">% increase in media-driven site visitors from Semcasting Precision Audience targeting. Same impressions reach higher-quality, eligibility-aware prospects who are more likely to engage. Conservative starting point: 5%.</div>
+            
+          </div>
+
+          <div class="field-group">
+            <label for="suppressionPct">Incremental from Better Member Suppression</label>
+            <div class="input-wrap">
+              <input id="suppressionPct" class="pad-right" inputmode="decimal" value="5.00" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">% of impressions recovered by suppressing existing USAA members beyond what your current stack catches. Set higher if your current suppression relies on cookies (which fail across devices and on military households with shared connections); lower if you already do deterministic CRM-based suppression.</div>
+            
+          </div>
+
+          <div class="field-group">
+            <label for="frequencyPct">Incremental from Better Media Frequency Control</label>
+            <div class="input-wrap">
+              <input id="frequencyPct" class="pad-right" inputmode="decimal" value="12.00" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">% of impressions recovered by capping frequency at the household/person level. Military households cluster on/near bases — DSP cookie-based caps fail in these environments. Deterministic household IDs deliver true frequency control.</div>
+            
+          </div>
+
+          <div class="field-group">
+            <label for="liftPct">Incremental from Better Media Measurement Tied to KPIs</label>
+            <div class="input-wrap">
+              <input id="liftPct" class="pad-right" inputmode="decimal" value="10.00" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">% increase in CTR/view-through rate driven by Semcasting's user-journey pipeline measurement. Closed-loop signal identifies which publishers, placements, and creative drive bound households — letting USAA reallocate budget to higher-performing inventory. Same impressions, more visitors per dollar.</div>
+            
+          </div>
+
+          <div class="nav-buttons">
+            <button class="btn-nav" disabled>Previous</button>
+            <button class="btn-nav primary" onclick="nextPage()">Next Step</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 2: Performance Metrics -->
+    <div class="page" id="page2">
+      <div class="wizard-layout">
+        <div class="info-panel">
+          <h3 class="info-title">From Impressions to Site Visits: The Two Visitor Pools</h3>
+          <div class="info-content">
+            <p>These metrics measure how effectively your impressions drive prospective shoppers to visit your site and begin a quote.</p>
+            
+            <p>The <strong>Media Click & View-Through Rate (CVTR)</strong> captures the combined percentage of impressions that result in a site visit — both direct ad clicks and view-through visits where someone saw the ad and later navigated to your site. This is the true media-driven visit rate for your spend.</p>
+
+            <div class="info-highlight">
+              💡 <strong>USAA Context:</strong> Combined click and view-through rates for finserv display campaigns typically range from 0.05%–0.15% for standard placements; USAA brand-trust and military-endemic placements typically index higher. View-through attribution typically accounts for 40–60% of total media-driven site visits.
+            </div>
+
+            <p><strong>Two visitor pools drive your quote funnel:</strong></p>
+            <ul>
+              <li><strong>Media-driven visitors:</strong> Impressions × CVTR — people who visited after seeing your ad (click or view-through)</li>
+              <li><strong>Organic visitors:</strong> People who arrive via search, direct, or referral — entered in the field below</li>
+            </ul>
+            <p>Both pools flow through the same quote funnel. Combined, they determine your total new-to-USAA households and ROMI.</p>
+          </div>
+        </div>
+
+        <div class="input-panel">
+          <h2 class="panel-title">USAA Media Metrics Assumptions</h2>
+          <p class="panel-subtitle">Define how well your impressions are converting to site visits and quote starts.</p>
+
+          <div class="field-group">
+            <label for="ctr">Media Click & View-Through Rate</label>
+            <div class="input-wrap">
+              <input id="ctr" class="pad-right" inputmode="decimal" value="0.08" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">Combined percentage of ad impressions that result in a site visit — including both direct clicks and view-through visits (people who saw your ad and later visited your site). This is the true media-driven visit rate.</div>
+            
+          </div>
+
+          <div class="field-group">
+            <label for="siteVisitors">Monthly Organic Site Visitors (usaa.com)</label>
+            <div class="input-wrap">
+              <input id="siteVisitors" inputmode="numeric" value="850,000" required>
+            </div>
+            <div class="hint">Monthly visitors to usaa.com from organic search, direct, referrals, agent links — independent of paid media. usaa.com is a top-ranked finserv destination; this is a directional figure for the prospect-facing surface (override with internal analytics).</div>
+          </div>
+
+          <div class="field-group">
+            <label for="visitorIdPct">% Visitors Identified — Without Semcasting</label>
+            <div class="input-wrap">
+              <input id="visitorIdPct" class="pad-right" inputmode="decimal" value="35.00" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">Percentage of total site visitors (media-driven + organic) your current technology can match to a real identity and make available for retargeting. Industry average without advanced identity resolution is 30–40%.</div>
+          </div>
+
+          <div class="field-group">
+            <label for="semcastingIdPct">% Visitors Identified — With Semcasting</label>
+            <div class="input-wrap">
+              <input id="semcastingIdPct" class="pad-right" inputmode="decimal" value="75.00" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">Percentage of total site visitors Semcasting's cookie-less identity resolution can identify — covering both media-driven and organic visitors. Semcasting's deterministic household graph typically resolves 70–80% of all site visitors.</div>
+          </div>
+
+          <div class="nav-buttons">
+            <button class="btn-nav" onclick="prevPage()">Previous</button>
+            <button class="btn-nav primary" onclick="nextPage()">Next Step</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 3: Quote-to-Bind Funnel -->
+    <div class="page" id="page3">
+      <div class="wizard-layout">
+        <div class="info-panel">
+          <h3 class="info-title">The USAA Quote-to-Bind Funnel</h3>
+          <div class="info-content">
+            <p>The quote-to-bind funnel measures how efficiently site visitors convert into new-to-USAA households. Both media-driven and organic visitors flow through this same funnel — and retargeting recovers a significant portion who don't convert on the first visit.</p>
+
+            <div class="info-highlight">
+              💡 <strong>The Retargeting Advantage:</strong> Without Semcasting, carriers can only identify and retarget ~35% of site visitors. With Semcasting's deterministic identity graph, that jumps to ~75% — meaning 40% more of your in-market visitors can be brought back to complete a quote and bind a policy.
+            </div>
+
+            <p><strong>Direct funnel stages:</strong></p>
+            <ul>
+              <li><strong>Visitor to Quote Start Rate:</strong> % of all site visitors who begin entering their information</li>
+              <li><strong>Quote Completion Rate:</strong> % of quote starters who complete all required fields and receive a rate</li>
+              <li><strong>Policy Bind Rate:</strong> % of completed quotes that result in a purchased policy</li>
+            </ul>
+
+            <p><strong>Retargeting funnel (applied to non-converters):</strong></p>
+            <ul>
+              <li><strong>Retarget CVTR:</strong> Combined click + view-through rate on retargeting ads served to identified non-converters. Higher than prospecting CVTR because audiences are warm and already quote-familiar.</li>
+              <li><strong>Retarget Bind Rate:</strong> % of retargeted visitors who return and bind a policy. Set at or above the direct bind rate — these shoppers already received a quote and just need a nudge.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="input-panel">
+          <h2 class="panel-title">Quote-to-Bind Funnel</h2>
+          <p class="panel-subtitle">Define conversion rates for direct visitors and retargeted non-converters.</p>
+
+          <div class="field-group">
+            <label for="startRate">Visitor to Quote Start Rate</label>
+            <div class="input-wrap">
+              <input id="startRate" class="pad-right" inputmode="decimal" value="6.00" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">Percentage of all site visitors (media-driven + organic) who begin entering their information to start a quote</div>
+          </div>
+
+          <div class="field-group">
+            <label for="completionRate">Quote Completion Rate</label>
+            <div class="input-wrap">
+              <input id="completionRate" class="pad-right" inputmode="decimal" value="18.00" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">% of quote starters who complete all required fields and receive a rate. Replace with internal analytics for accurate USAA-specific results.</div>
+          </div>
+
+          <div class="field-group">
+            <label for="fundedRate">Policy Bind Rate (Direct) — New-to-USAA Households</label>
+            <div class="input-wrap">
+              <input id="fundedRate" class="pad-right" inputmode="decimal" value="15.00" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">% of completed quotes that bind on first visit, becoming a new-to-USAA household. Replace with internal analytics for accurate USAA-specific results.</div>
+          </div>
+
+          <div class="field-group">
+            <label for="retargetCtr">Retargeting CVTR (Click + View-Through)</label>
+            <div class="input-wrap">
+              <input id="retargetCtr" class="pad-right" inputmode="decimal" value="2.00" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">Combined click and view-through rate for retargeting ads served to identified non-converters. Higher than prospecting CVTR — these are warm, quote-familiar audiences responding to reminder messaging.</div>
+          </div>
+
+          <div class="field-group">
+            <label for="retargetConversion">Retarget Bind Rate</label>
+            <div class="input-wrap">
+              <input id="retargetConversion" class="pad-right" inputmode="decimal" value="19.00" required>
+              <span class="suffix">%</span>
+            </div>
+            <div class="hint">Percentage of retargeted visitors who return and bind a policy. Set at or above the direct bind rate — retargeted visitors already received a quote and have demonstrated intent; they simply need a reminder to complete their purchase.</div>
+          </div>
+
+          <div class="nav-buttons">
+            <button class="btn-nav" onclick="prevPage()">Previous</button>
+            <button class="btn-nav primary" onclick="nextPage()">Next Step</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 4: Value & Lift -->
+    <div class="page" id="page4">
+      <div class="wizard-layout">
+        <div class="info-panel">
+          <h3 class="info-title">CLTV, PLTV & Bundle Economics</h3>
+          <div class="info-content">
+            <p>USAA's stated measurement framework explicitly tracks <strong>CLTV (Customer Lifetime Value)</strong> and <strong>PLTV (Policy Lifetime Value)</strong> — and per the Results section of Sasi Telluri's framework, USAA reports "sequential growth in CLTV and PLTV measures YoY across major product lines."</p>
+
+            <div class="info-highlight">
+              📊 <strong>USAA Hero Product LTV Anchors</strong><br><br>
+              • <strong>Hero Auto:</strong> ~$11,280 ($2,256 annual premium × 5 yr avg lifespan)<br>
+              • <strong>Multi-Product Bundle (Auto + Home + Bank):</strong> ~$32,000 with retention uplift
+            </div>
+
+            <p><strong>Why bundle economics matter for ROMI:</strong></p>
+            <ul>
+              <li><strong>Bundled households retain 2–3× longer</strong> than single-product — directly extending PLTV.</li>
+              <li><strong>Cross-LOB cross-sell drives higher CAC efficiency</strong> — one acquisition, multiple revenue streams.</li>
+              <li><strong>USAA's "Hero products" + "curated onboarding journeys" strategy</strong> is explicitly built to maximize bundle take-rate on new-to-USAA households.</li>
+              <li><strong>Identity is the unlock:</strong> bundling requires knowing the household — across products, across devices, across the family. That's exactly what Semcasting's deterministic graph delivers.</li>
+            </ul>
+
+            <p><strong>Measurement Lift:</strong> Identity-based optimization typically delivers 10–15% improvement in campaign performance via better targeting, reduced waste, and stronger Quality Funnel Starts entering the conversion path.</p>
+          </div>
+        </div>
+
+        <div class="input-panel">
+          <h2 class="panel-title">Lifetime Revenue & Measurement Impact</h2>
+          <p class="panel-subtitle">Enter the Year-1 and lifetime revenue per new-to-USAA household, then your expected measurement lift.</p>
+
+          <div class="field-group">
+            <label for="firstYearRevenue">Year-1 Revenue Per New-to-USAA Household</label>
+            <div class="input-wrap">
+              <span class="prefix">$</span>
+              <input id="firstYearRevenue" class="money pad-left" inputmode="decimal" value="2,256.00" required>
+            </div>
+            <div class="hint">Average premium / fee revenue collected in the first year per acquired household. This is the <strong>defensible, Finance-credible</strong> revenue figure — what shows up on the books in the year media spend occurred.</div>
+            
+          </div>
+
+          <div class="field-group">
+            <label for="ltv">Lifetime Revenue Per New-to-USAA Household (PV)</label>
+            <div class="input-wrap">
+              <span class="prefix">$</span>
+              <input id="ltv" class="money pad-left" inputmode="decimal" value="11,280.00" required>
+            </div>
+            <div class="hint">Present value of total premium revenue per acquired household over their full relationship with USAA. <strong>Forward-looking</strong> — useful for LTV:CAC and cohort economics, but not for Year-1 P&L attribution.</div>
+            
+          </div>
+
+          <div class="field-group">
+            <label for="notes">Notes (Optional)</label>
+            <textarea id="notes" rows="3" placeholder="Add any notes about your assumptions, carrier context, or scenario details..."></textarea>
+          </div>
+
+          <div class="nav-buttons">
+            <button class="btn-nav" onclick="prevPage()">Previous</button>
+            <button class="btn-nav primary" onclick="calculateAndNext()">Calculate Results →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 5: Incremental Impact -->
+    <div class="page" id="page5">
+      <div class="wizard-layout">
+        <div class="info-panel">
+          <h3 class="info-title">The Semcasting Identity Advantage</h3>
+          <div class="info-content">
+            <p>The core value of Semcasting's identity resolution is simple: <strong>more of your quote abandoners become retargetable prospects.</strong></p>
+
+            <p>Without advanced identity resolution, carriers can only identify and retarget about <strong>35%</strong> of quote abandoners. That means 65% of in-market shoppers — people who started a quote and left — simply disappear.</p>
+
+            <p>With Semcasting's deterministic household identity graph, that identification rate rises to <strong>75%</strong>. That additional 40% represents warm, intent-demonstrated prospects who can now be retargeted to complete their purchase.</p>
+
+            <div class="info-highlight">
+              📊 <strong>The Math:</strong> Retargeting in this model is applied <em>only to quote abandoners</em> (visitors who started a quote but didn't bind). It is <em>not</em> applied to every site visitor — that would overstate retarget conversion. This is the conservative, defensible approach.
+            </div>
+
+            <p><strong>Five sources of incremental value:</strong></p>
+            <ul>
+              <li><strong>Better Targeting:</strong> Semcasting Precision Audience reaches more high-quality, eligibility-aware prospects per impression — additional site visitors who flow through the funnel</li>
+              <li><strong>Measurement-Driven Reallocation:</strong> Pipeline-measured user-journey signal lets USAA shift budget to publishers and placements actually driving bound households — raising effective CTR per impression dollar</li>
+              <li><strong>Recovered Impressions:</strong> Member suppression and frequency control redirect wasted impressions to true prospects</li>
+              <li><strong>Incremental Direct Households:</strong> Additional new-to-USAA households from those recovered impressions flowing through the direct funnel</li>
+              <li><strong>Retargeting Lift:</strong> The additional 40% of quote abandoners now identified — brought back via retargeting to bind</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="input-panel">
+          <h2 class="panel-title">Incremental Impact — With Semcasting</h2>
+          <p class="panel-subtitle">How identity-based measurement and retargeting improves USAA's new-to-household acquisition.</p>
+
+          <div class="romi-toggle" role="tablist" aria-label="ROMI Revenue View">
+            <div class="romi-toggle-label">ROMI<br>View</div>
+            <button class="romi-toggle-btn active" id="romiBtnYr1" type="button" onclick="setRomiView('year1')">
+              Year-1 Revenue
+              <span class="romi-toggle-sub">Defensible · matches Y1 P&L</span>
+            </button>
+            <button class="romi-toggle-btn" id="romiBtnLtv" type="button" onclick="setRomiView('lifetime')">
+              Lifetime Revenue (PV)
+              <span class="romi-toggle-sub">Forward-looking · cohort economics</span>
+            </button>
+          </div>
+
+
+          <hr class="section-divider">
+          <h3 class="section-heading">Total ROMI Impact</h3>
+          <p style="font-size:13px; color:var(--muted2); margin-bottom:16px;">The headline numbers — total incremental households and revenue across all four Semcasting capability levers. Detailed breakdown by source follows below.</p>
+
+          <div class="output-grid">
+            <div class="output-card success">
+              <div class="output-label">Total Incremental New-to-USAA Households</div>
+              <div class="output-value" id="o_total_inc_rev">—</div>
+              <div class="output-mini">Sum of contributions from Better Targeting + Measurement Reallocation + Recovered Impressions + Retargeting Lift</div>
+            </div>
+            <div class="output-card success">
+              <div class="output-label">Total Incremental Revenue</div>
+              <div class="output-value" id="o_total_impr_value">—</div>
+              <div class="output-mini">Total incremental households × revenue per household (Year-1 or Lifetime per toggle)</div>
+            </div>
+          </div>
+
+<hr class="section-divider">
+          <h3 class="section-heading">1. Better Targeting — Additional Households from Precision Audience</h3>
+          <p style="font-size:13px; color:var(--muted2); margin-bottom:16px;">Same impressions, more high-quality visitors. Semcasting's eligibility-aware Precision Audience targeting reaches more in-market prospects per impression — additional visitors who flow through the same quote-to-bind funnel.</p>
+
+          <div class="output-grid">
+            <div class="output-card highlight">
+              <div class="output-label">Incremental Site Visitors</div>
+              <div class="output-value" id="o_inc_targeting_visitors">—</div>
+              <div class="output-mini">Additional site visitors from Semcasting Precision Audience targeting</div>
+            </div>
+            <div class="output-card highlight">
+              <div class="output-label">Incremental New-to-USAA Households</div>
+              <div class="output-value" id="o_inc_targeting_bound">—</div>
+              <div class="output-mini">Additional households bound from those incremental visitors</div>
+            </div>
+            <div class="output-card success">
+              <div class="output-label">Incremental Revenue</div>
+              <div class="output-value" id="o_inc_targeting_rev">—</div>
+              <div class="output-mini">Incremental targeting households × revenue per household (Year-1 or Lifetime per toggle)</div>
+            </div>
+          </div>
+
+          <hr class="section-divider">
+          <h3 class="section-heading">2. Measurement-Driven Media Reallocation</h3>
+          <p style="font-size:13px; color:var(--muted2); margin-bottom:16px;">Semcasting's user-journey pipeline measures which publishers, placements, and creative drive bound households. Reallocating budget to higher-performing inventory raises effective CTR — same impressions, more visitors per dollar.</p>
+
+          <div class="output-grid">
+            <div class="output-card highlight">
+              <div class="output-label">Incremental Site Visitors</div>
+              <div class="output-value" id="o_inc_measurement_visitors">—</div>
+              <div class="output-mini">Additional site visitors from CTR uplift after measurement-driven reallocation</div>
+            </div>
+            <div class="output-card highlight">
+              <div class="output-label">Incremental New-to-USAA Households</div>
+              <div class="output-value" id="o_inc_measurement_bound">—</div>
+              <div class="output-mini">Additional households bound from those incremental visitors</div>
+            </div>
+            <div class="output-card success">
+              <div class="output-label">Incremental Revenue</div>
+              <div class="output-value" id="o_inc_measurement_rev">—</div>
+              <div class="output-mini">Incremental measurement-driven households × revenue per household (Year-1 or Lifetime per toggle)</div>
+            </div>
+          </div>
+
+          <hr class="section-divider">
+          <h3 class="section-heading">3. Recovered Media Impressions</h3>
+          <p style="font-size:13px; color:var(--muted2); margin-bottom:16px;">Impressions freed up by suppressing existing USAA members and correcting frequency waste — redirected to reach new military-affiliated prospects.</p>
+
+          <div class="output-grid">
+            <div class="output-card highlight">
+              <div class="output-label">Recovered Impressions</div>
+              <div class="output-value" id="o_increased_impr">—</div>
+              <div class="output-mini">Impressions recaptured from suppression + frequency optimization</div>
+            </div>
+            <div class="output-card highlight">
+              <div class="output-label">Media Value Recovered</div>
+              <div class="output-value" id="o_impr_value">—</div>
+              <div class="output-mini">Dollar value of recovered impressions at your CPM</div>
+            </div>
+          </div>
+
+          <hr class="section-divider">
+          <h3 class="section-heading">4. Incremental New-to-USAA Households from Recovered Impressions</h3>
+          <p style="font-size:13px; color:var(--muted2); margin-bottom:16px;">Additional new-to-USAA households acquired from recovered impressions flowing through the direct quote-to-bind funnel.</p>
+
+          <div class="output-grid">
+            <div class="output-card highlight">
+              <div class="output-label">Incremental New-to-USAA Households</div>
+              <div class="output-value" id="o_inc_funded_impr">—</div>
+              <div class="output-mini">Additional households from recovered impressions through direct funnel</div>
+            </div>
+            <div class="output-card success">
+              <div class="output-label">Incremental Revenue</div>
+              <div class="output-value" id="o_inc_rev_impr">—</div>
+              <div class="output-mini">Incremental households × lifetime revenue per household</div>
+            </div>
+          </div>
+
+          <hr class="section-divider">
+          <h3 class="section-heading">5. Retargeting Lift — The Identification Advantage</h3>
+          <p style="font-size:13px; color:var(--muted2); margin-bottom:16px;">Policies recovered by identifying and retargeting the additional 40% of site visitors only Semcasting can resolve.</p>
+
+          <div class="output-grid">
+            <div class="output-card highlight">
+              <div class="output-label">Quote Abandoners ID'd — Without Semcasting</div>
+              <div class="output-value" id="o_current_identified">—</div>
+              <div class="output-mini">Quote abandoners identifiable with current technology (35% of abandoners)</div>
+            </div>
+            <div class="output-card highlight">
+              <div class="output-label">Quote Abandoners ID'd — With Semcasting</div>
+              <div class="output-value" id="o_semcasting_identified">—</div>
+              <div class="output-mini">Quote abandoners identifiable with Semcasting (75% of abandoners)</div>
+            </div>
+            <div class="output-card highlight">
+              <div class="output-label">Incremental Abandoners Recovered</div>
+              <div class="output-value" id="o_additional_identified">—</div>
+              <div class="output-mini">Additional quote abandoners now retargetable with Semcasting (+40 pts of pool)</div>
+            </div>
+            <div class="output-card highlight">
+              <div class="output-label">Retarget Households — Without Semcasting</div>
+              <div class="output-value" id="o_retarget_base">—</div>
+              <div class="output-mini">New-to-USAA households from retargeting at 35% abandoner ID rate</div>
+            </div>
+            <div class="output-card highlight">
+              <div class="output-label">Retarget Households — With Semcasting</div>
+              <div class="output-value" id="o_retarget_conversions">—</div>
+              <div class="output-mini">New-to-USAA households from retargeting at 75% abandoner ID rate</div>
+            </div>
+            <div class="output-card success">
+              <div class="output-label">Incremental Retarget Revenue</div>
+              <div class="output-value" id="o_inc_rev_retarget">—</div>
+              <div class="output-mini">Additional retarget households × revenue per household (Year-1 or Lifetime per toggle)</div>
+            </div>
+          </div>
+
+          <hr class="section-divider">
+          <h3 class="section-heading">Cost Per Funnel Start & ROMI Comparison</h3>
+
+          <div class="output-grid">
+            <div class="output-card highlight">
+              <div class="output-label">Cost Per Funnel Start — Without Semcasting</div>
+              <div class="output-value" id="o_cpb_base">—</div>
+              <div class="output-mini">Media budget ÷ total new-to-USAA households (direct + baseline retarget)</div>
+            </div>
+            <div class="output-card success">
+              <div class="output-label">Cost Per Funnel Start — With Semcasting</div>
+              <div class="output-value" id="o_cpb_sem">—</div>
+              <div class="output-mini">Media budget ÷ total new-to-USAA households (direct + Semcasting retarget)</div>
+            </div>
+            <div class="output-card highlight">
+              <div class="output-label">LTV:CAC ROMI — Without Semcasting</div>
+              <div class="output-value" id="o_ltv_cac_base">—</div>
+              <div class="output-mini">Lifetime revenue per household ÷ cost to acquire</div>
+            </div>
+            <div class="output-card success">
+              <div class="output-label">LTV:CAC ROMI — With Semcasting</div>
+              <div class="output-value" id="o_ltv_cac_sem">—</div>
+              <div class="output-mini">Lifetime revenue per household ÷ cost to acquire</div>
+            </div>
+          </div>
+
+
+          <hr class="section-divider">
+          <details class="baseline-details">
+            <summary class="baseline-summary">View baseline funnel detail (without Semcasting)</summary>
+            <div class="baseline-content">
+              <p style="font-size:13px; color:var(--muted2); margin: 12px 0 20px;">For context only. These are the funnel outputs from your inputs <em>before</em> any Semcasting uplift is applied.</p>
+
+              <div class="output-grid">
+                <div class="output-card highlight">
+                  <div class="output-label">Total Impressions</div>
+                  <div class="output-value" id="o_impr">—</div>
+                  <div class="output-mini" id="o_impr_mini">From your media budget and CPM</div>
+                </div>
+                <div class="output-card highlight">
+                  <div class="output-label">Quality Funnel Starts</div>
+                  <div class="output-value" id="o_starts">—</div>
+                  <div class="output-mini" id="o_starts_mini">Quote starts from prospect-targeted impressions — USAA's stated top media-efficiency KPI</div>
+                </div>
+                <div class="output-card highlight">
+                  <div class="output-label">Completed Quotes</div>
+                  <div class="output-value" id="o_comp">—</div>
+                  <div class="output-mini" id="o_comp_mini">Quote starts that complete underwriting and receive a rate</div>
+                </div>
+                <div class="output-card success">
+                  <div class="output-label">New-to-USAA Households (Direct)</div>
+                  <div class="output-value" id="o_funded">—</div>
+                  <div class="output-mini" id="o_funded_mini">Bound on first visit — net new-to-USAA households (baseline)</div>
+                </div>
+              </div>
+
+              <div class="output-card" style="margin-top: 16px; margin-bottom: 16px;">
+                <div class="output-label"><span id="o_rev_view_label">Year-1</span> Revenue (Digital Media — Baseline)</div>
+                <div class="output-value" id="o_rev_base">—</div>
+                <div class="output-mini" id="o_rev_base_mini"></div>
+              </div>
+
+              <div class="output-grid" style="margin-top:16px;">
+                <div class="output-card highlight">
+                  <div class="output-label">Cost Per Funnel Start</div>
+                  <div class="output-value" id="o_cpb_base_p5">—</div>
+                  <div class="output-mini">Media budget ÷ total new-to-USAA households (direct + baseline retarget) — the inverse of CPB; mirrors USAA's stated "Cost per funnel start" KPI.</div>
+                </div>
+                <div class="output-card highlight">
+                  <div class="output-label">LTV:CAC Ratio (Baseline ROMI)</div>
+                  <div class="output-value" id="o_ltv_cac_base_p5">—</div>
+                  <div class="output-mini">Lifetime revenue per household ÷ cost to acquire. Healthy finserv benchmark: 3× or higher.</div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <div class="nav-buttons">
+            <button class="btn-nav" onclick="prevPage()">Previous</button>
+            <button class="btn-nav primary" onclick="downloadPDF()">Download PDF Report</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /container -->
+</div><!-- /calculator-view -->
+
+<!-- Email Modal -->
+<div class="modal-overlay" id="emailModal">
+  <div class="modal-box">
+    <div class="modal-title">One quick step</div>
+    <div class="modal-sub" id="emailModalSub">Enter your email to access this feature. We'll occasionally send insights about identity-based insurance marketing.</div>
+    <div class="field-group">
+      <label for="modalEmail">Work Email</label>
+      <input type="email" id="modalEmail" placeholder="you@carrier.com">
+    </div>
+    <div class="modal-actions">
+      <button class="btn-nav primary" onclick="submitEmail()">Continue</button>
+      <button class="btn-nav" onclick="closeEmailModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ── USAA HERO PRODUCT SCENARIOS ──
+  // Inputs calibrated to public USAA scale: 14M members, ~$400M total measured media,
+  // ~55M military-affiliated TAM. Budgets are illustrative allocations within USAA's
+  // total measured media spend; override with internal figures.
+  const BENCHMARKS = {
+    // HERO AUTO — USAA's core acquisition product. Auto premium ~$2,256/yr × ~5yr lifespan.
+    heroAuto: {
+      budget: 80000000,
+      cpm: 17,
+      suppressionPct: 5,
+      frequencyPct: 12,
+      ctr: 0.08,
+      targetingLift: 5,
+      startRate: 6,
+      completionRate: 18,
+      fundedRate: 15,
+      siteVisitors: 850000,
+      visitorIdPct: 35,
+      semcastingIdPct: 75,
+      retargetCtr: 2.0,
+      retargetConversion: 24,
+      firstYearRevenue: 2256,    // Year-1 premium
+      ltv: 11280,                // PV lifetime (5yr)
+      liftPct: 12,
+    },
+    // MULTI-PRODUCT BUNDLE — Auto + Home + Bank. USAA's stated Hero strategy.
+    bundle: {
+      budget: 140000000,
+      cpm: 17,
+      suppressionPct: 5,
+      frequencyPct: 12,
+      ctr: 0.09,
+      targetingLift: 5,
+      startRate: 7,
+      completionRate: 18,
+      fundedRate: 15,
+      siteVisitors: 850000,
+      visitorIdPct: 35,
+      semcastingIdPct: 75,
+      retargetCtr: 2.2,
+      retargetConversion: 26,
+      firstYearRevenue: 4500,    // combined Y1 premium across LOBs
+      ltv: 32000,                // bundled LTV w/ retention uplift
+      liftPct: 15,
+    }
+  };
+
+  // ── ELEMENT REFS ──
+  function $(id) { return document.getElementById(id); }
+
+  const els = {
+    budget: $('budget'), cpm: $('cpm'),
+    suppressionPct: $('suppressionPct'), frequencyPct: $('frequencyPct'),
+    ctr: $('ctr'), startRate: $('startRate'),
+    completionRate: $('completionRate'), fundedRate: $('fundedRate'),
+    siteVisitors: $('siteVisitors'),
+    targetingLift: $('targetingLift'),
+    visitorIdPct: $('visitorIdPct'), semcastingIdPct: $('semcastingIdPct'),
+    retargetCtr: $('retargetCtr'), retargetConversion: $('retargetConversion'),
+    firstYearRevenue: $('firstYearRevenue'),
+    ltv: $('ltv'), liftPct: $('liftPct'),
+    notes: $('notes'),
+    // Page 5 outputs
+    o_impr: $('o_impr'), o_impr_mini: $('o_impr_mini'),
+    o_starts: $('o_starts'), o_starts_mini: $('o_starts_mini'),
+    o_comp: $('o_comp'), o_comp_mini: $('o_comp_mini'),
+    o_funded: $('o_funded'), o_funded_mini: $('o_funded_mini'),
+    o_rev_base: $('o_rev_base'), o_rev_base_mini: $('o_rev_base_mini'),
+    o_cpb_base_p5: $('o_cpb_base_p5'),
+    o_ltv_cac_base_p5: $('o_ltv_cac_base_p5'),
+    // Page 6 outputs
+    o_increased_impr: $('o_increased_impr'), o_impr_value: $('o_impr_value'),
+    o_inc_funded_impr: $('o_inc_funded_impr'), o_inc_rev_impr: $('o_inc_rev_impr'),
+    o_current_identified: $('o_current_identified'),
+    o_semcasting_identified: $('o_semcasting_identified'),
+    o_additional_identified: $('o_additional_identified'),
+    o_retarget_base: $('o_retarget_base'),
+    o_retarget_conversions: $('o_retarget_conversions'),
+    o_inc_rev_retarget: $('o_inc_rev_retarget'),
+    o_total_inc_rev: $('o_total_inc_rev'),
+    o_total_impr_value: $('o_total_impr_value'),
+    o_cpb_base: $('o_cpb_base'), o_cpb_sem: $('o_cpb_sem'),
+    o_ltv_cac_base: $('o_ltv_cac_base'), o_ltv_cac_sem: $('o_ltv_cac_sem'),
+  };
+
+  // ── FORMATTING ──
+  const fmtMoney0 = v => '$' + Math.round(v).toLocaleString('en-US');
+  const fmtInt = v => Math.round(v).toLocaleString('en-US');
+
+  function parseMoney(el) {
+    return parseFloat(el.value.replace(/[$,]/g, '')) || 0;
+  }
+  function parsePercent(el) {
+    return parseFloat(el.value.replace(/[%,]/g, '')) / 100 || 0;
+  }
+  function parseInteger(el) {
+    return parseInt(el.value.replace(/[,]/g, '')) || 0;
+  }
+
+  function formatCurrency(el, decimals) {
+    const v = parseMoney(el);
+    el.value = v.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  }
+  function formatPercent(el) {
+    const v = parseFloat(el.value.replace(/[%,]/g, '')) || 0;
+    el.value = v.toFixed(2);
+  }
+  function formatInteger(el) {
+    const v = parseInt(el.value.replace(/[,]/g, '')) || 0;
+    el.value = v.toLocaleString('en-US');
+  }
+
+  function wireCurrency(id, decimals) {
+    const el = $(id);
+    el.addEventListener('blur', () => formatCurrency(el, decimals));
+  }
+  function wirePercent(id) {
+    const el = $(id);
+    el.addEventListener('blur', () => formatPercent(el));
+  }
+  function wireInteger(id) {
+    const el = $(id);
+    el.addEventListener('blur', () => formatInteger(el));
+  }
+
+  function setVal(el, v, type, decimals) {
+    if (type === 'currency') el.value = v.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+    else if (type === 'percent') el.value = v.toFixed(2);
+    else if (type === 'integer') el.value = Math.round(v).toLocaleString('en-US');
+  }
+
+  // ── PAGE NAVIGATION ──
+  let currentPage = 1;
+  const TOTAL_PAGES = 5;
+
+  function showPage(n) {
+    document.querySelectorAll('#calculator-view .page').forEach(p => p.classList.remove('active'));
+    const pg = $('page' + n);
+    if (pg) pg.classList.add('active');
+    currentPage = n;
+
+    // Update stepper
+    document.querySelectorAll('.step').forEach(s => {
+      const sn = parseInt(s.getAttribute('data-step'));
+      s.classList.remove('active', 'completed');
+      if (sn === n) s.classList.add('active');
+      else if (sn < n) s.classList.add('completed');
+    });
+
+    // Update progress bar
+    $('progressBar').style.width = ((n / TOTAL_PAGES) * 100) + '%';
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function nextPage() {
+    if (currentPage < TOTAL_PAGES) showPage(currentPage + 1);
+  }
+
+  function prevPage() {
+    if (currentPage > 1) showPage(currentPage - 1);
+  }
+
+  // ── LANDING / CALCULATOR TOGGLE ──
+  function showCalculator() {
+    $('landing-view').style.display = 'none';
+    $('calculator-view').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showLanding() {
+    $('calculator-view').style.display = 'none';
+    $('landing-view').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── ERROR ──
+  function showErr(msg) {
+    const el = $('errorMsg');
+    if (!el) return;
+    el.textContent = msg;
+    el.style.display = msg ? 'block' : 'none';
+  }
+
+  // ── EMAIL GATE ──
+  let userEmailValidated = false;
+  let pendingAction = null;
+
+  function openEmailModal(action) {
+    pendingAction = action;
+    $('emailModal').classList.add('open');
+  }
+
+  function closeEmailModal() {
+    $('emailModal').classList.remove('open');
+    pendingAction = null;
+  }
+
+  function submitEmail() {
+    const email = $('modalEmail').value.trim();
+    if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+    userEmailValidated = true;
+    closeEmailModal();
+    if (pendingAction === 'pdf') executePDF();
+    else if (pendingAction === 'link') executeLink();
+  }
+
+  // ── CALCULATION ──
+  function calculate() {
+    try {
+      showErr('');
+      const i = {
+        budget:           parseMoney(els.budget),
+        cpm:              parseMoney(els.cpm),
+        suppressionPct:   parsePercent(els.suppressionPct),
+        frequencyPct:     parsePercent(els.frequencyPct),
+        ctr:              parsePercent(els.ctr),
+        startRate:        parsePercent(els.startRate),
+        completionRate:   parsePercent(els.completionRate),
+        fundedRate:       parsePercent(els.fundedRate),
+        siteVisitors:     parseInteger(els.siteVisitors),
+        targetingLift:    parsePercent(els.targetingLift),
+        visitorIdPct:     parsePercent(els.visitorIdPct),
+        semcastingIdPct:  parsePercent(els.semcastingIdPct),
+        retargetCtr:      parsePercent(els.retargetCtr),
+        retargetConversion: parsePercent(els.retargetConversion),
+        firstYearRevenue: parseMoney(els.firstYearRevenue),
+        ltv:              parseMoney(els.ltv),
+        liftPct:          parsePercent(els.liftPct),
+      };
+
+      if (i.budget <= 0) throw new Error('Please enter a valid media budget.');
+      if (i.cpm <= 0)    throw new Error('Please enter a valid CPM.');
+      if (i.firstYearRevenue <= 0) throw new Error('Please enter a valid Year-1 revenue per household.');
+
+      // ── VISITOR POOLS ──
+      const impressions          = (i.budget / i.cpm) * 1000;
+      const mediaVisitors        = impressions * i.ctr;       // annual MEDIA-DRIVEN ONLY
+      const organicVisitorsAnnual= i.siteVisitors * 12;       // annual organic — for context only
+
+      // ── DIRECT FUNNEL — MEDIA-ATTRIBUTED ONLY (Fix 2: organic excluded) ──
+      const mediaStarts      = mediaVisitors * i.startRate;       // Quality Funnel Starts (media-attributed)
+      const mediaCompletions = mediaStarts   * i.completionRate;
+      const directBound      = mediaCompletions * i.fundedRate;
+
+      // ── RETARGETING — quote ABANDONERS only (Fix 3: not all visitors) ──
+      const quoteAbandoners      = Math.max(mediaStarts - directBound, 0);
+      const baseIdentified       = quoteAbandoners * i.visitorIdPct;
+      const semIdentified        = quoteAbandoners * i.semcastingIdPct;
+      const additionalIdentified = semIdentified - baseIdentified;
+
+      const baseRetargetBound    = baseIdentified * i.retargetCtr * i.retargetConversion;
+      const semRetargetBound     = semIdentified  * i.retargetCtr * i.retargetConversion;
+      const incRetargetBound     = semRetargetBound - baseRetargetBound;
+
+      // ── BASELINE TOTALS ──
+      const baseTotalBound       = directBound + baseRetargetBound;
+      // ── WITH-SEMCASTING TOTALS ──
+      const semTotalBound        = directBound + semRetargetBound;
+
+      // ── BETTER TARGETING (Precision Audience) — additional site visitors from same impressions ──
+      // Higher-quality targeting reaches more eligible prospects per impression. These additional
+      // visitors flow through the same funnel (start → complete → bind) at the same rates.
+      const incTargetingVisitors = mediaVisitors * i.targetingLift;
+      const incTargetingBound    = incTargetingVisitors * i.startRate * i.completionRate * i.fundedRate;
+      const incTargetingRevYr1   = incTargetingBound * i.firstYearRevenue;
+      const incTargetingRevLtv   = incTargetingBound * i.ltv;
+
+      // ── MEASUREMENT LIFT — pipeline-driven media reallocation ──
+      // Semcasting's user-journey pipeline identifies which publishers, placements, and creative
+      // drive bound households. Reallocating budget to higher-performing inventory raises the
+      // effective CTR/view-through rate. Net: more media-driven visitors per impression dollar.
+      const incMeasurementVisitors = mediaVisitors * i.liftPct;
+      const incMeasurementBound    = incMeasurementVisitors * i.startRate * i.completionRate * i.fundedRate;
+      const incMeasurementRevYr1   = incMeasurementBound * i.firstYearRevenue;
+      const incMeasurementRevLtv   = incMeasurementBound * i.ltv;
+
+      // ── RECOVERED IMPRESSIONS (Semcasting member-suppression + frequency control) ──
+      const impressionOptimization  = i.suppressionPct + i.frequencyPct;
+      const recoveredImpressions    = impressions * impressionOptimization;
+      const recoveredImpValue       = (recoveredImpressions / 1000) * i.cpm;
+      const incDirectFromImpr       = recoveredImpressions * i.ctr * i.startRate * i.completionRate * i.fundedRate;
+
+      // ── TOTAL INCREMENTAL — targeting + measurement + recovered impressions + retargeting lift ──
+      const totalIncBound   = incTargetingBound + incMeasurementBound + incDirectFromImpr + incRetargetBound;
+
+      // ── REVENUE — TWO TRACKS (Fix 1: Year-1 vs Lifetime) ──
+      // Year-1 = defensible Finance number. Lifetime = forward-looking PV.
+      const baseRevYr1   = baseTotalBound * i.firstYearRevenue;
+      const semRevYr1    = (semTotalBound + incTargetingBound + incMeasurementBound + incDirectFromImpr) * i.firstYearRevenue;
+      const incRevYr1    = totalIncBound  * i.firstYearRevenue;
+
+      const baseRevLtv   = baseTotalBound * i.ltv;
+      const semRevLtv    = (semTotalBound + incTargetingBound + incMeasurementBound + incDirectFromImpr) * i.ltv;
+      const incRevLtv    = totalIncBound  * i.ltv;
+
+      const incRetargetRevenueLtv = incRetargetBound * i.ltv;
+      const incRevenueFromImprLtv = incDirectFromImpr * i.ltv;
+
+      // ── CPB ── (cost per new-to-USAA household, with Semcasting using full uplift)
+      const cpbBase  = baseTotalBound > 0 ? i.budget / baseTotalBound : 0;
+      const cpbSem   = (semTotalBound + incTargetingBound + incMeasurementBound + incDirectFromImpr) > 0 ? i.budget / (semTotalBound + incTargetingBound + incMeasurementBound + incDirectFromImpr) : 0;
+
+      // LTV:CAC uses lifetime revenue (industry-standard ratio)
+      const ltvCacBase = cpbBase > 0 ? i.ltv / cpbBase : 0;
+      const ltvCacSem  = cpbSem  > 0 ? i.ltv / cpbSem  : 0;
+
+      // ── ROMI: Year-1 revenue ÷ media spend (the honest headline) ──
+      const romiYr1Base = i.budget > 0 ? baseRevYr1 / i.budget : 0;
+      const romiYr1Sem  = i.budget > 0 ? semRevYr1  / i.budget : 0;
+
+      // Determine which revenue track to feature based on toggle (default: Year-1)
+      const useLifetime = (typeof window.__romiView === 'string' && window.__romiView === 'lifetime');
+      const featuredBaseRev = useLifetime ? baseRevLtv : baseRevYr1;
+      const featuredIncRev  = useLifetime ? incRevLtv  : incRevYr1;
+      const revLabel = useLifetime ? 'Lifetime PV' : 'Year-1';
+
+      // ── PAGE 5 OUTPUTS ──
+      els.o_impr.textContent = fmtInt(impressions);
+      els.o_impr_mini.textContent = `Media-driven visitors (annual): ${fmtInt(mediaVisitors)}  |  Organic (annual, context only — NOT in attribution): ${fmtInt(organicVisitorsAnnual)}`;
+
+      els.o_starts.textContent = fmtInt(mediaStarts);
+      els.o_starts_mini.textContent = `Media-attributed quote starts: ${fmtInt(mediaVisitors)} media visitors × ${(i.startRate*100).toFixed(1)}% start rate. Organic visitors are NOT counted toward media-attributed funnel starts.`;
+
+      els.o_comp.textContent = fmtInt(mediaCompletions);
+      els.o_comp_mini.textContent = 'Media-attributed quote starters who completed underwriting and received a rate';
+
+      els.o_funded.textContent = fmtInt(directBound);
+      els.o_funded_mini.textContent = 'New-to-USAA households bound on first visit from media-driven traffic (baseline)';
+
+      els.o_rev_base.textContent = fmtMoney0(featuredBaseRev);
+      els.o_rev_base_mini.innerHTML = `<strong>${revLabel} revenue from ${fmtInt(baseTotalBound)} new-to-USAA households (direct + baseline retarget on quote abandoners). Year-1: ${fmtMoney0(baseRevYr1)} · Lifetime PV: ${fmtMoney0(baseRevLtv)}.</strong>`;
+
+      els.o_cpb_base_p5.textContent  = fmtMoney0(cpbBase);
+      els.o_ltv_cac_base_p5.textContent = ltvCacBase.toFixed(1) + '×';
+
+      // ── PAGE 5 OUTPUTS ──
+      // Section 1: Better Targeting (Precision Audience)
+      const incTargetingRevFeatured = useLifetime ? incTargetingRevLtv : incTargetingRevYr1;
+      if ($('o_inc_targeting_visitors')) $('o_inc_targeting_visitors').textContent = fmtInt(incTargetingVisitors);
+      if ($('o_inc_targeting_bound'))    $('o_inc_targeting_bound').textContent    = fmtInt(incTargetingBound);
+      if ($('o_inc_targeting_rev'))      $('o_inc_targeting_rev').textContent      = fmtMoney0(incTargetingRevFeatured);
+
+      // Section 2: Measurement-Driven Reallocation
+      const incMeasurementRevFeatured = useLifetime ? incMeasurementRevLtv : incMeasurementRevYr1;
+      if ($('o_inc_measurement_visitors')) $('o_inc_measurement_visitors').textContent = fmtInt(incMeasurementVisitors);
+      if ($('o_inc_measurement_bound'))    $('o_inc_measurement_bound').textContent    = fmtInt(incMeasurementBound);
+      if ($('o_inc_measurement_rev'))      $('o_inc_measurement_rev').textContent      = fmtMoney0(incMeasurementRevFeatured);
+
+      // Section 3: Recovered impressions
+      els.o_increased_impr.textContent = fmtInt(recoveredImpressions);
+      els.o_impr_value.textContent     = fmtMoney0(recoveredImpValue);
+
+      // Section 4: Incremental direct from recovered impressions
+      els.o_inc_funded_impr.textContent = fmtInt(incDirectFromImpr);
+      els.o_inc_rev_impr.textContent    = useLifetime ? fmtMoney0(incRevenueFromImprLtv) : fmtMoney0(incDirectFromImpr * i.firstYearRevenue);
+
+      // Section 5: Identification advantage (scoped to abandoners)
+      els.o_current_identified.textContent  = fmtInt(baseIdentified);
+      els.o_semcasting_identified.textContent = fmtInt(semIdentified);
+      els.o_additional_identified.textContent = fmtInt(additionalIdentified);
+      els.o_retarget_base.textContent       = fmtInt(baseRetargetBound);
+      els.o_retarget_conversions.textContent = fmtInt(semRetargetBound);
+      els.o_inc_rev_retarget.textContent    = useLifetime ? fmtMoney0(incRetargetRevenueLtv) : fmtMoney0(incRetargetBound * i.firstYearRevenue);
+
+      // Total ROMI summary
+      els.o_total_inc_rev.textContent   = fmtInt(totalIncBound);
+      els.o_total_impr_value.textContent = fmtMoney0(featuredIncRev);
+
+      // CPB & LTV:CAC comparison
+      els.o_cpb_base.textContent    = fmtMoney0(cpbBase);
+      els.o_cpb_sem.textContent     = fmtMoney0(cpbSem);
+      els.o_ltv_cac_base.textContent = ltvCacBase.toFixed(1) + '×';
+      els.o_ltv_cac_sem.textContent  = ltvCacSem.toFixed(1) + '×';
+
+      // Update the ROMI view labels if toggle elements exist
+      const romiBaseEl = $('o_romi_base');
+      const romiSemEl  = $('o_romi_sem');
+      if (romiBaseEl) romiBaseEl.textContent = romiYr1Base.toFixed(2) + '×';
+      if (romiSemEl)  romiSemEl.textContent  = romiYr1Sem.toFixed(2) + '×';
+
+      const revViewLabel = $('o_rev_view_label');
+      if (revViewLabel) revViewLabel.textContent = revLabel;
+
+    } catch(e) {
+      showErr(e.message || 'Please check your inputs.');
+      throw e;
+    }
+  }
+  // ── ROMI VIEW TOGGLE (Year-1 vs Lifetime) ──
+  // Default to year1 (the more defensible view).
+  window.__romiView = 'year1';
+
+  function setRomiView(view) {
+    window.__romiView = (view === 'lifetime') ? 'lifetime' : 'year1';
+    // Update toggle UI on both pages
+    ['romiBtnYr1','romiBtnLtv'].forEach(id => {
+      const el = $(id);
+      if (!el) return;
+      el.classList.remove('active');
+    });
+    if (window.__romiView === 'year1') {
+      ['romiBtnYr1'].forEach(id => $(id) && $(id).classList.add('active'));
+    } else {
+      ['romiBtnLtv'].forEach(id => $(id) && $(id).classList.add('active'));
+    }
+    // Re-run calculation to refresh outputs
+    try { calculate(); } catch(e) { /* noop */ }
+  }
+
+  function calculateAndNext() {
+    try {
+      calculate();
+      nextPage();
+    } catch(e) { /* Error already shown */ }
+  }
+
+  // ── PRESETS ──
+  function loadPreset(tier) {
+    const b = BENCHMARKS[tier];
+    setVal(els.budget, b.budget, 'currency', 0);
+    setVal(els.cpm, b.cpm, 'currency', 2);
+    setVal(els.suppressionPct, b.suppressionPct, 'percent');
+    setVal(els.frequencyPct, b.frequencyPct, 'percent');
+    setVal(els.ctr, b.ctr, 'percent');
+    setVal(els.targetingLift, b.targetingLift, 'percent');
+    setVal(els.startRate, b.startRate, 'percent');
+    setVal(els.completionRate, b.completionRate, 'percent');
+    setVal(els.fundedRate, b.fundedRate, 'percent');
+    setVal(els.siteVisitors, b.siteVisitors, 'integer');
+    setVal(els.visitorIdPct, b.visitorIdPct, 'percent');
+    setVal(els.semcastingIdPct, b.semcastingIdPct, 'percent');
+    setVal(els.retargetCtr, b.retargetCtr, 'percent');
+    setVal(els.retargetConversion, b.retargetConversion, 'percent');
+    setVal(els.ltv, b.ltv, 'currency', 2);
+    setVal(els.firstYearRevenue, b.firstYearRevenue, 'currency', 2);
+    setVal(els.liftPct, b.liftPct, 'percent');
+    setVal(els.semcastingIdPct, b.semcastingIdPct, 'percent');
+
+    document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      const label = btn.textContent.trim().toLowerCase();
+      if ((tier === 'heroAuto' && label === 'hero auto') ||
+          (tier === 'bundle' && label.includes('bundle'))) {
+        btn.classList.add('active');
+      }
+    });
+
+    showErr('');
+    showPage(1);
+  }
+
+  // ── PDF EXPORT ──
+  function downloadPDF() {
+    if (!userEmailValidated) { openEmailModal('pdf'); return; }
+    executePDF();
+  }
+
+  function executePDF() {
+    const esc = (s) => (s || "").toString().replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
+
+    const inputs = [
+      ["Marketing Budget", "$" + esc(els.budget.value)],
+      ["Blended CPM", "$" + esc(els.cpm.value)],
+      ["Incremental from Better Member Suppression", esc(els.suppressionPct.value) + "%"],
+      ["Incremental from Better Media Frequency Control", esc(els.frequencyPct.value) + "%"],
+      ["Click-Through Rate", esc(els.ctr.value) + "%"],
+      ["Targeting Lift % (Better Targeting)", esc(els.targetingLift.value) + "%"],
+      ["Visitor to Quote Start Rate", esc(els.startRate.value) + "%"],
+      ["Quote Completion Rate", esc(els.completionRate.value) + "%"],
+      ["Policy Bind Rate", esc(els.fundedRate.value) + "%"],
+      ["Monthly Site Visitors", esc(els.siteVisitors.value)],
+      ["% Visitors Currently Identified", esc(els.visitorIdPct.value) + "%"],
+      ["% Visitors ID'd With Semcasting", esc(els.semcastingIdPct.value) + "%"],
+      ["Quote Abandoner Retargeting CTR", esc(els.retargetCtr.value) + "%"],
+      ["Quote Abandoner Bind Conversion", esc(els.retargetConversion.value) + "%"],
+      ["LTV Per New-to-USAA Household", "$" + esc(els.ltv.value)],
+      ["Incremental from Better Media Measurement Tied to KPIs", esc(els.liftPct.value) + "%"],
+    ];
+
+    const outputs = [
+      ["<strong>Current Digital Media Performance</strong>", ""],
+      ["Total Impressions", esc(els.o_impr.textContent)],
+      ["Quote Starters", esc(els.o_starts.textContent)],
+      ["Completed Quotes", esc(els.o_comp.textContent)],
+      ["New-to-USAA Households (Baseline)", esc(els.o_funded.textContent)],
+      ["Base Policy Revenue", esc(els.o_rev_base.textContent)],
+      ["Cost Per Funnel Start (Without Semcasting)", esc(els.o_cpb_base_p5.textContent)],
+      ["LTV:CAC Ratio (Without Semcasting)", esc(els.o_ltv_cac_base_p5.textContent)],
+      ["", ""],
+      ["<strong>Better Targeting (Precision Audience)</strong>", ""],
+      ["Incremental Site Visitors", $('o_inc_targeting_visitors') ? esc($('o_inc_targeting_visitors').textContent) : ""],
+      ["Incremental New-to-USAA Households (Targeting)", $('o_inc_targeting_bound') ? esc($('o_inc_targeting_bound').textContent) : ""],
+      ["Incremental Revenue (Targeting)", $('o_inc_targeting_rev') ? esc($('o_inc_targeting_rev').textContent) : ""],
+      ["", ""],
+      ["<strong>Measurement-Driven Reallocation</strong>", ""],
+      ["Incremental Site Visitors (Measurement)", $('o_inc_measurement_visitors') ? esc($('o_inc_measurement_visitors').textContent) : ""],
+      ["Incremental New-to-USAA Households (Measurement)", $('o_inc_measurement_bound') ? esc($('o_inc_measurement_bound').textContent) : ""],
+      ["Incremental Revenue (Measurement)", $('o_inc_measurement_rev') ? esc($('o_inc_measurement_rev').textContent) : ""],
+      ["", ""],
+      ["<strong>Financial Impact to Media</strong>", ""],
+      ["Recovered Impressions (Member Suppression + Frequency Control)", esc(els.o_increased_impr.textContent)],
+      ["Monetary Value of Recovered Media", esc(els.o_impr_value.textContent)],
+      ["", ""],
+      ["<strong>Incremental New-to-USAA Households from Recovered Impressions</strong>", ""],
+      ["Incremental New-to-USAA Households", esc(els.o_inc_funded_impr.textContent)],
+      ["Incremental Revenue", esc(els.o_inc_rev_impr.textContent)],
+      ["", ""],
+      ["<strong>Incremental Households from Quote Abandoner Retargeting</strong>", ""],
+      ["Currently Identified Visitors", esc(els.o_current_identified.textContent)],
+      ["Additional Visitors ID'd via Semcasting", esc(els.o_additional_identified.textContent)],
+      ["Retargeting Conversions (New-to-USAA Households)", esc(els.o_retarget_conversions.textContent)],
+      ["Retargeting Revenue", esc(els.o_inc_rev_retarget.textContent)],
+      ["", ""],
+      ["<strong>TOTAL ROMI IMPACT</strong>", ""],
+      ["Total Incremental New-to-USAA Households", esc(els.o_total_inc_rev.textContent)],
+      ["Total Incremental Revenue", esc(els.o_total_impr_value.textContent)],
+      ["Cost Per Funnel Start (With Semcasting)", esc(els.o_cpb_sem.textContent)],
+      ["LTV:CAC ROMI (With Semcasting)", esc(els.o_ltv_cac_sem.textContent)],
+    ];
+
+    const rows = (arr) => arr.map(([k,v]) => `<tr><td>${k}</td><td>${v}</td></tr>`).join("");
+
+    const style = `
+      <style>
+        @page { margin: 18mm; }
+        body{ font-family: system-ui, sans-serif; color:#111; }
+        .hdr{ display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+        .logo{ width:30px; height:30px; border-radius:8px; background: linear-gradient(135deg, #003a70, #2a6bb0); display:inline-block; }
+        h1{ font-size: 18px; margin:0; color: #003a70; }
+        .meta{ font-size: 11px; color:#666; }
+        .box{ border:1px solid #ddd; border-radius: 10px; padding: 16px; margin: 16px 0; }
+        h2{ font-size: 14px; margin: 0 0 12px; font-weight:800; color: #2e7d32; }
+        table{ width:100%; border-collapse: collapse; font-size: 13px; }
+        td{ padding: 10px 8px; border-bottom: 1px solid #eee; }
+        td:first-child{ width: 65%; }
+        td:last-child{ text-align:right; font-weight:700; }
+      </style>
+    `;
+
+    const html = `
+      <!doctype html><html><head><meta charset="utf-8">${style}<title>USAA × Semcasting ROMI Report</title></head>
+      <body onload="setTimeout(()=>window.print(),250)">
+        <div class="hdr">
+          <div>
+            <div class="logo"></div>
+            <h1>USAA × Semcasting ROMI Calculator</h1>
+            <p style="margin:4px 0 0; font-size:13px; color:#003a70;">Reimagining Marketing Measurement for Profitable Growth</p>
+          </div>
+          <div class="meta">Generated ${new Date().toLocaleString()}</div>
+        </div>
+        ${els.notes.value ? `<div class="box"><h2>Notes</h2><p>${esc(els.notes.value)}</p></div>` : ""}
+        <div class="box"><h2>Inputs</h2><table>${rows(inputs)}</table></div>
+        <div class="box"><h2>Results</h2><table>${rows(outputs)}</table></div>
+      </body></html>
+    `;
+
+    const w = window.open("", "_blank");
+    if (w) { w.document.write(html); w.document.close(); }
+  }
+
+  function copyLink() {
+    if (!userEmailValidated) { openEmailModal('link'); return; }
+    executeLink();
+  }
+
+  function executeLink() {
+    navigator.clipboard.writeText(location.href).then(() => { alert('Link copied to clipboard!'); });
+  }
+
+  // ── WIRE INPUTS ──
+  wireCurrency('budget', 0);
+  wireCurrency('cpm', 2);
+  wireCurrency('ltv', 2);
+  wireCurrency('firstYearRevenue', 2);
+  wireInteger('siteVisitors');
+  ['ctr','startRate','completionRate','fundedRate','liftPct','suppressionPct','frequencyPct','visitorIdPct','semcastingIdPct','retargetCtr','retargetConversion','targetingLift'].forEach(wirePercent);
+
+  // ── INIT — default to Hero Auto ──
+  loadPreset('heroAuto');
+
+  // ── EVENTS ──
+  $('resetBtn').addEventListener('click', () => loadPreset('heroAuto'));
+
+  document.querySelectorAll('.step').forEach(stepEl => {
+    const stepNum = parseInt(stepEl.getAttribute('data-step'));
+    stepEl.addEventListener('click', () => {
+      if (stepNum >= 1 && stepNum <= 5) showPage(stepNum);
+    });
+  });
+</script>
+</div>
+
+</body>
+</html>
