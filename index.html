@@ -1429,20 +1429,16 @@
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stat-item">
-    <div class="stat-number" data-count="6">0</div>
+    <div class="stat-number" data-count="5">0</div>
     <div class="stat-label">Input Pages</div>
   </div>
   <div class="stat-item">
-    <div class="stat-number" data-count="20">0</div>
-    <div class="stat-label">Performance Metrics</div>
+    <div class="stat-number" data-count="4">0</div>
+    <div class="stat-label">Identity-Driven Levers</div>
   </div>
   <div class="stat-item">
-    <div class="stat-number" data-prefix="$" data-count="0" data-suffix="M+">—</div>
-    <div class="stat-label">Revenue Modeled</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number" data-count="3">0</div>
-    <div class="stat-label">Benchmark Scenarios</div>
+    <div class="stat-number" data-count="2">0</div>
+    <div class="stat-label">Scenarios</div>
   </div>
 </div>
 
@@ -1561,7 +1557,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
         <div class="feature-title">Industry Benchmarks Built In</div>
-        <div class="feature-desc">Hero Auto and Multi-Product Bundle presets — calibrated to USAA scale and aligned to the Hero Products strategy from your stated marketing framework.</div>
+        <div class="feature-desc">Auto and Multi-Product Bundle presets — calibrated to USAA scale and aligned to USAA's stated marketing framework.</div>
       </div>
 
       <div class="feature-card">
@@ -1622,7 +1618,7 @@
         </li>
         <li>
           <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-          Hero Auto and Multi-Product Bundle scenarios
+          Auto and Multi-Product Bundle scenarios
         </li>
         <li>
           <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
@@ -1665,7 +1661,7 @@
         <div class="mock-input">$11,280.00</div>
         <div class="mock-label">Incremental from Better Media Measurement Tied to KPIs</div>
         <div class="mock-input">12.00%</div>
-        <div class="mock-label">Projected Hero Auto Results</div>
+        <div class="mock-label">Projected Auto Results</div>
         <div class="mock-result-row">
           <div class="mock-result">
             <div class="mock-result-num">$320M</div>
@@ -1860,8 +1856,8 @@
           <p class="panel-subtitle">Start by entering your digital marketing budget and estimated cost per thousand impressions.</p>
 
           <div class="preset-bar">
-            <span style="font-size:13px; font-weight:700; color:var(--muted2); align-self:center;">Hero Product Scenario:</span>
-            <button class="preset-btn active" onclick="loadPreset('heroAuto')">Hero Auto</button>
+            <span style="font-size:13px; font-weight:700; color:var(--muted2); align-self:center;">Scenario:</span>
+            <button class="preset-btn active" onclick="loadPreset('auto')">Auto</button>
             <button class="preset-btn" onclick="loadPreset('bundle')">Multi-Product Bundle</button>
           </div>
 
@@ -1871,7 +1867,7 @@
               <span class="prefix">$</span>
               <input id="budget" class="money pad-left" inputmode="numeric" value="80,000,000" required>
             </div>
-            <div class="hint">Annual digital media budget for the selected hero product. Hero Auto ≈ $80M, Multi-Product Bundle ≈ $140M (illustrative allocations within USAA's ~$400M total measured media). Override with internal figures.</div>
+            <div class="hint">Annual digital media budget for the selected scenario. Auto ≈ $80M, Multi-Product Bundle ≈ $140M (illustrative allocations within USAA's ~$400M total measured media). Override with internal figures.</div>
           </div>
 
           <div class="field-group">
@@ -2099,8 +2095,8 @@
             <p>USAA's stated measurement framework explicitly tracks <strong>CLTV (Customer Lifetime Value)</strong> and <strong>PLTV (Policy Lifetime Value)</strong> — and per the Results section of Sasi Telluri's framework, USAA reports "sequential growth in CLTV and PLTV measures YoY across major product lines."</p>
 
             <div class="info-highlight">
-              📊 <strong>USAA Hero Product LTV Anchors</strong><br><br>
-              • <strong>Hero Auto:</strong> ~$11,280 ($2,256 annual premium × 5 yr avg lifespan)<br>
+              📊 <strong>LTV Anchors by Scenario</strong><br><br>
+              • <strong>Auto:</strong> ~$11,280 ($2,256 annual premium × 5 yr avg lifespan)<br>
               • <strong>Multi-Product Bundle (Auto + Home + Bank):</strong> ~$32,000 with retention uplift
             </div>
 
@@ -2439,7 +2435,7 @@
   // total measured media spend; override with internal figures.
   const BENCHMARKS = {
     // HERO AUTO — USAA's core acquisition product. Auto premium ~$2,256/yr × ~5yr lifespan.
-    heroAuto: {
+    auto: {
       budget: 80000000,
       cpm: 17,
       suppressionPct: 5,
@@ -2875,7 +2871,7 @@
     document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
     document.querySelectorAll('.preset-btn').forEach(btn => {
       const label = btn.textContent.trim().toLowerCase();
-      if ((tier === 'heroAuto' && label === 'hero auto') ||
+      if ((tier === 'auto' && label === 'auto') ||
           (tier === 'bundle' && label.includes('bundle'))) {
         btn.classList.add('active');
       }
@@ -3011,11 +3007,11 @@
   wireInteger('siteVisitors');
   ['ctr','startRate','completionRate','fundedRate','liftPct','suppressionPct','frequencyPct','visitorIdPct','semcastingIdPct','retargetCtr','retargetConversion','targetingLift'].forEach(wirePercent);
 
-  // ── INIT — default to Hero Auto ──
-  loadPreset('heroAuto');
+  // ── INIT — default to Auto ──
+  loadPreset('auto');
 
   // ── EVENTS ──
-  $('resetBtn').addEventListener('click', () => loadPreset('heroAuto'));
+  $('resetBtn').addEventListener('click', () => loadPreset('auto'));
 
   document.querySelectorAll('.step').forEach(stepEl => {
     const stepNum = parseInt(stepEl.getAttribute('data-step'));
